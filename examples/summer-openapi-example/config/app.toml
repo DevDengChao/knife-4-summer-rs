@@ -1,0 +1,11 @@
+[web]
+binding = "127.0.0.1"
+port = 8090
+
+[web.openapi.info]
+title = "summer-rs Knife4j Example"
+version = "0.1.0"
+description = "summer-rs openapi-example style integration with Knife4j."
+
+[knife4j]
+group_name = "summer-rs"

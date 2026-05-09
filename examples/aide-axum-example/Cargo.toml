@@ -1,0 +1,17 @@
+[package]
+name = "knife4j-aide-axum-example"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+aide.workspace = true
+axum.workspace = true
+knife-4-summer-rs = { path = "../.." }
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true

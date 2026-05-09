@@ -1,0 +1,15 @@
+[package]
+name = "knife4j-summer-openapi-example"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+knife-4-summer-rs = { path = "../.." }
+schemars.workspace = true
+serde.workspace = true
+summer.workspace = true
+summer-web.workspace = true
+tokio.workspace = true

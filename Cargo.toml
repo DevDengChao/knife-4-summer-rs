@@ -1,0 +1,57 @@
+[workspace]
+resolver = "2"
+members = [
+    ".",
+    "examples/aide-axum-example",
+    "examples/petstore-example",
+    "examples/summer-openapi-example",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["DevDengChao"]
+repository = "https://github.com/DevDengChao/knife-4-summer-rs"
+
+[workspace.dependencies]
+aide = { version = "0.16.0-alpha.2", features = ["axum", "axum-json"] }
+anyhow = "1.0"
+async-trait = "0.1"
+axum = "0.8"
+http-body-util = "0.1"
+mime_guess = "2.0"
+rust-embed = { version = "8.7", features = ["compression"] }
+schemars = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+summer = "0.5"
+summer-web = { version = "0.5", features = ["openapi"] }
+tokio = { version = "1.47", features = ["full", "tracing"] }
+tower = { version = "0.5", features = ["util"] }
+tracing = "0.1"
+
+[package]
+name = "knife-4-summer-rs"
+description = "Knife4j-style OpenAPI documentation plugin for summer-rs and aide"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+[dependencies]
+aide.workspace = true
+axum.workspace = true
+mime_guess.workspace = true
+rust-embed.workspace = true
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+summer.workspace = true
+summer-web.workspace = true
+
+[dev-dependencies]
+http-body-util.workspace = true
+tokio.workspace = true
+tower.workspace = true
