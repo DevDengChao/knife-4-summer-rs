@@ -51,6 +51,7 @@ export function useKnife4j() {
   const activeGroup = ref<Knife4jDiscoveryGroup>()
   const api = ref<ParsedOpenApi>()
   const activeOperation = ref<ApiOperation>()
+  const activeModel = ref<ParsedOpenApi['models'][number]>()
   const keyword = ref('')
   const loading = ref(true)
   const error = ref('')
@@ -116,6 +117,7 @@ export function useKnife4j() {
       const document = await fetchJson<OpenApiDocument>(resolveRelativeUrl(activeGroup.value.url))
       api.value = parseOpenApi(document)
       activeOperation.value = api.value.operations[0]
+      activeModel.value = api.value.models[0]
       resetDebugInputs(activeOperation.value)
       response.value = undefined
     } catch (err) {
@@ -135,6 +137,10 @@ export function useKnife4j() {
     activeTab.value = 'detail'
     resetDebugInputs(operation)
     response.value = undefined
+  }
+
+  function selectModel(model: ParsedOpenApi['models'][number]) {
+    activeModel.value = model
   }
 
   async function sendDebugRequest() {
@@ -243,6 +249,7 @@ export function useKnife4j() {
     groups,
     activeGroup,
     api,
+    activeModel,
     activeOperation,
     activeTab,
     authEntries,
@@ -262,6 +269,7 @@ export function useKnife4j() {
     addGlobalParameter,
     refreshGroups,
     selectGroup,
+    selectModel,
     selectOperation,
     sendDebugRequest
   }

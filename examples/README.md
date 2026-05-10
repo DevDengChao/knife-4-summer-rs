@@ -16,6 +16,8 @@ These examples are also the persisted E2E matrix:
 - `aide-axum-example` verifies direct `aide` / `axum` integration.
 - `petstore-example` verifies Swagger 2.0 rendering against the Petstore document.
 
+Each example is rendered through this crate's `/doc.html` and `/doc` routes, then through the pinned official Knife4j UI, so the same OpenAPI document is checked across all three surfaces.
+
 Run the full browser parity check from the repository root:
 
 ```powershell

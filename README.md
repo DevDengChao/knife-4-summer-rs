@@ -95,6 +95,8 @@ pnpm --dir frontend e2e
 
 The E2E suite starts all three examples, builds the official `knife4j-vue3` UI in `.e2e-cache/`, and checks `/doc.html`, `/doc`, and the official Knife4j reference rendering against the same OpenAPI documents. On Windows, prefer the sparse checkout commands above because the full Knife4j repository contains Java paths that can exceed the default path-length limit.
 
+The parity assertions cover document overview counts, tag and operation navigation, search, operation details, request parameters, response status and schemas, debug request controls, model switching, auth and global-parameter controls, offline export downloads, and official Knife4j management entries.
+
 ## Examples
 
 ```powershell

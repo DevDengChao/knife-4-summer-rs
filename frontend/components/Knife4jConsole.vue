@@ -8,7 +8,7 @@ import { exportHtml, exportMarkdown, exportWordHtml } from '../utils/exporters'
 const state = useKnife4j()
 
 const selectedResponse = computed(() => state.activeOperation.value?.responses[0])
-const selectedModel = computed(() => state.api.value?.models[0])
+const selectedModel = computed(() => state.activeModel.value)
 
 function download(filename: string, content: string, type: string) {
   const blob = new Blob([content], { type })
@@ -268,7 +268,13 @@ function downloadExport(kind: 'json' | 'markdown' | 'html' | 'word') {
 
         <section v-else-if="state.activeTab.value === 'models'" class="panel">
           <div class="model-list">
-            <button v-for="model in state.api.value.models" :key="model.name" class="model-pill">
+            <button
+              v-for="model in state.api.value.models"
+              :key="model.name"
+              class="model-pill"
+              :class="{ active: selectedModel?.name === model.name }"
+              @click="state.selectModel(model)"
+            >
               {{ model.name }}
             </button>
           </div>
@@ -732,6 +738,12 @@ button {
   border: 1px solid #d9dee7;
   background: #fbfcfe;
   padding: 8px 10px;
+}
+
+.model-pill.active {
+  border-color: #1677ff;
+  background: #f0f7ff;
+  color: #0958d9;
 }
 
 .settings-grid {
