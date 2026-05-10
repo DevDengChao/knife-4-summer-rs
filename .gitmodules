@@ -1,0 +1,5 @@
+[submodule "references/knife4j"]
+	path = references/knife4j
+	url = git@github.com:xiaoymin/knife4j.git
+	branch = dev
+	ignore = dirty

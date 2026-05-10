@@ -4,7 +4,10 @@ node_modules/
 .output/
 dist/
 .data/
+.e2e-cache/
 .worktrees/
 worktrees/
+playwright-report/
+test-results/
 *.log
 *.tsbuildinfo

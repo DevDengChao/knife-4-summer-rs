@@ -9,3 +9,15 @@ cargo run -p knife4j-petstore-example
 ```
 
 Then open `/doc.html` or `/doc` on the printed local URL.
+
+These examples are also the persisted E2E matrix:
+
+- `summer-openapi-example` verifies the summer-rs plugin path.
+- `aide-axum-example` verifies direct `aide` / `axum` integration.
+- `petstore-example` verifies Swagger 2.0 rendering against the Petstore document.
+
+Run the full browser parity check from the repository root:
+
+```powershell
+pnpm --dir frontend e2e
+```

@@ -80,6 +80,21 @@ pnpm --dir frontend generate
 
 After `generate`, copy `frontend/.output/public` into `assets/knife4j` before publishing the Rust crate.
 
+## Knife4j reference and E2E
+
+The official Knife4j repository is pinned as a submodule at `references/knife4j`.
+It is used only as an E2E rendering baseline; runtime code is still the Nuxt UI in this crate.
+
+```powershell
+git submodule update --init references/knife4j
+git -C references/knife4j sparse-checkout init --cone
+git -C references/knife4j sparse-checkout set knife4j-vue3
+pnpm --dir frontend exec playwright install chromium
+pnpm --dir frontend e2e
+```
+
+The E2E suite starts all three examples, builds the official `knife4j-vue3` UI in `.e2e-cache/`, and checks `/doc.html`, `/doc`, and the official Knife4j reference rendering against the same OpenAPI documents. On Windows, prefer the sparse checkout commands above because the full Knife4j repository contains Java paths that can exceed the default path-length limit.
+
 ## Examples
 
 ```powershell

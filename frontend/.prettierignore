@@ -3,4 +3,7 @@
 node_modules
 dist
 coverage
+.e2e-cache
+playwright-report
+test-results
 pnpm-lock.yaml
