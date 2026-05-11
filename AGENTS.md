@@ -9,4 +9,7 @@
 - `references/knife4j` 是官方 Knife4j 对照仓库 submodule，固定用于 E2E；不要复制其源码到本项目，也不要在 submodule 内提交 `node_modules`、`dist` 或临时改动。
 - Windows 下全量 checkout 官方 Knife4j 可能触发长路径问题；E2E 只需要 `knife4j-vue3`，可用 sparse checkout 初始化。
 - E2E 会把官方 Knife4j UI 复制到仓库根目录 `.e2e-cache/knife4j-vue3` 构建，避免污染 submodule。
+- crates.io 发布由 `.github/workflows/publish-crate.yml` 在推送裸 SemVer tag（例如 `0.1.1`）时触发；tag 必须与 `Cargo.toml` 的 `workspace.package.version` 完全一致，不使用 `v` 前缀。
+- 发布认证使用 crates.io Trusted Publishing，GitHub Environment 名为 `release`，不要引入长期 `CARGO_REGISTRY_TOKEN`。
+- 发布前必须先运行 `pnpm --dir frontend generate` 和 `pnpm --dir frontend sync:assets`，后者会归一化 Nuxt 构建元数据并把 `frontend/.output/public` 同步到 `assets/knife4j`；workflow 会重新生成并用 `git diff --exit-code -- assets/knife4j` 校验嵌入资源已提交。
 - 提交信息必须包含 `Co-authored-by` 尾注。

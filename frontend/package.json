@@ -6,6 +6,7 @@
     "dev": "nuxt dev --host 127.0.0.1",
     "e2e": "playwright test",
     "generate": "nuxt generate",
+    "sync:assets": "node scripts/sync-assets.mjs",
     "preview": "nuxt preview --host 127.0.0.1",
     "lint": "nuxt prepare && eslint .",
     "format": "prettier --check .",

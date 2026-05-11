@@ -1,3 +1,4 @@
 * text=auto
 
 /frontend/** text eol=lf
+/assets/knife4j/** text eol=lf

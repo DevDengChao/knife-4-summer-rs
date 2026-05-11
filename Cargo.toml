@@ -39,6 +39,13 @@ edition.workspace = true
 license.workspace = true
 authors.workspace = true
 repository.workspace = true
+include = [
+    "/Cargo.toml",
+    "/README.md",
+    "/assets/knife4j/**",
+    "/src/**",
+    "/tests/**",
+]
 
 [dependencies]
 aide.workspace = true

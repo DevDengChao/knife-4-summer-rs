@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-05-09',
+  buildId: 'knife4j-static',
   ssr: false,
   modules: ['@unocss/nuxt', '@nuxt/eslint'],
   app: {
