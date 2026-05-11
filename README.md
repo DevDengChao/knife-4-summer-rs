@@ -107,6 +107,7 @@ pnpm --dir frontend generate
 ```
 
 After `generate`, run `pnpm --dir frontend sync:assets` to refresh the embedded `assets/knife4j` files used by the Rust crate.
+The generated `assets/knife4j` directory is ignored by git. It is generated locally before Rust tests and generated again by the publish workflow before the crate is packaged.
 
 ## Knife4j reference and E2E
 

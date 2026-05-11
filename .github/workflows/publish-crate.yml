@@ -77,21 +77,33 @@ jobs:
       - name: Generate frontend assets
         run: pnpm --dir frontend generate
 
-      - name: Verify embedded assets are current
-        shell: bash
-        run: |
-          set -euo pipefail
-          pnpm --dir frontend sync:assets
-          git diff --exit-code -- assets/knife4j
+      - name: Sync embedded assets
+        run: pnpm --dir frontend sync:assets
 
       - name: Test Rust workspace
         run: cargo test --workspace
 
       - name: List crate package contents
-        run: cargo package --list -p knife-4-summer-rs
+        shell: bash
+        run: |
+          set -euo pipefail
+          package_files="$(cargo package --allow-dirty --list -p knife-4-summer-rs)"
+          printf '%s\n' "$package_files"
+
+          for required_file in \
+            assets/knife4j/index.html \
+            assets/knife4j/_knife4j/entry.js \
+            assets/knife4j/_knife4j/Knife4jConsole.js \
+            assets/knife4j/_knife4j/Knife4jConsole.css
+          do
+            if ! grep -Fxq "$required_file" <<< "$package_files"; then
+              echo "::error::Generated asset '${required_file}' is missing from the crate package."
+              exit 1
+            fi
+          done
 
       - name: Dry-run crate publish
-        run: cargo publish --dry-run --locked -p knife-4-summer-rs
+        run: cargo publish --dry-run --locked --allow-dirty -p knife-4-summer-rs
 
       - name: Authenticate with crates.io
         id: auth
@@ -100,4 +112,4 @@ jobs:
       - name: Publish crate
         env:
           CARGO_REGISTRY_TOKEN: ${{ steps.auth.outputs.token }}
-        run: cargo publish --locked -p knife-4-summer-rs
+        run: cargo publish --locked --allow-dirty -p knife-4-summer-rs
