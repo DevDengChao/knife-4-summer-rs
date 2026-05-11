@@ -21,6 +21,17 @@ export default defineNuxtConfig({
       routes: ['/', '/doc', '/doc.html']
     }
   },
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          entryFileNames: '_knife4j/[name].js',
+          chunkFileNames: '_knife4j/[name].js',
+          assetFileNames: '_knife4j/[name][extname]'
+        }
+      }
+    }
+  },
   eslint: {
     config: {
       stylistic: false
