@@ -462,7 +462,7 @@ const _sfc_main = {
     };
   }
 };
-const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-ca48caf0"]]);
+const error404 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-08c7e506"]]);
 export {
   error404 as default
 };

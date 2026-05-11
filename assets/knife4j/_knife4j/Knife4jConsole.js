@@ -622,9 +622,13 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         createBaseVNode("header", _hoisted_2, [
           _cache[17] || (_cache[17] = createBaseVNode("div", { class: "brand" }, [
             createBaseVNode("div", { class: "brand-mark" }, "K"),
-            createBaseVNode("div", null, [
-              createBaseVNode("strong", null, "Knife4j"),
-              createBaseVNode("span", null, "summer-rs")
+            createBaseVNode("div", { class: "brand-copy" }, [
+              createBaseVNode("strong", null, "Knife 4 summer-rs"),
+              createBaseVNode("a", {
+                href: "https://github.com/DevDengChao/knife-4-summer-rs",
+                target: "_blank",
+                rel: "noopener noreferrer"
+              }, "By DevDengChao")
             ])
           ], -1)),
           createBaseVNode("nav", _hoisted_3, [

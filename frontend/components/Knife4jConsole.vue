@@ -42,9 +42,14 @@ function downloadExport(kind: 'json' | 'markdown' | 'html' | 'word') {
     <header class="topbar">
       <div class="brand">
         <div class="brand-mark">K</div>
-        <div>
-          <strong>Knife4j</strong>
-          <span>summer-rs</span>
+        <div class="brand-copy">
+          <strong>Knife 4 summer-rs</strong>
+          <a
+            href="https://github.com/DevDengChao/knife-4-summer-rs"
+            target="_blank"
+            rel="noopener noreferrer"
+            >By DevDengChao</a
+          >
         </div>
       </div>
       <nav class="toolbar">
@@ -400,7 +405,7 @@ button {
   width: 30px;
   height: 30px;
   place-items: center;
-  background: #1677ff;
+  background: #d34516;
   font-weight: 800;
 }
 
@@ -409,10 +414,16 @@ button {
   font-size: 15px;
 }
 
-.brand span {
+.brand a {
   display: block;
   color: #cbd5e1;
   font-size: 11px;
+  text-decoration: none;
+}
+
+.brand a:hover {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .toolbar {
