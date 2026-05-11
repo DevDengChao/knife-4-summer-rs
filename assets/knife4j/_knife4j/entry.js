@@ -11230,7 +11230,7 @@ const revivers = [
   ["Ref", (data) => /* @__PURE__ */ ref(data)],
   ["Reactive", (data) => /* @__PURE__ */ reactive(data)]
 ];
-const revive_payload_client_C65OzCNWnNx0WMS4opsUJLilFSaIDSgGsQ48mlVflRM = /* @__PURE__ */ defineNuxtPlugin({
+const revive_payload_client_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:revive-payload:client",
   order: -30,
   async setup(nuxtApp) {
@@ -11468,7 +11468,7 @@ function createHead(options = {}) {
 const unheadOptions = {
   disableDefaults: true
 };
-const unhead_RzBWsUc4kAbuTLtCDj0Smj_9nxZhsnGdjqkaUaaPJ_k = /* @__PURE__ */ defineNuxtPlugin({
+const unhead_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:head",
   enforce: "pre",
   setup(nuxtApp) {
@@ -13504,7 +13504,7 @@ const onNuxtReady = (callback) => {
     requestIdleCallback(() => callback());
   }
 };
-const navigation_repaint_client__dFBKtLwqa5hHnqNFKazhpcFc720TO73qAms8ECI5zY = /* @__PURE__ */ defineNuxtPlugin(() => {
+const navigation_repaint_client_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin(() => {
   const router = useRouter();
   onNuxtReady(() => {
     router.beforeResolve(async () => {
@@ -13517,7 +13517,7 @@ const navigation_repaint_client__dFBKtLwqa5hHnqNFKazhpcFc720TO73qAms8ECI5zY = /*
     });
   });
 });
-const check_outdated_build_client_okGd8NVwkUZotl4hIb2dR0_eggksvPWLEouHNoqALt4 = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
+const check_outdated_build_client_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
   let timeout;
   async function getLatestManifest() {
     let currentManifest;
@@ -13573,7 +13573,7 @@ function reloadNuxtApp(options = {}) {
     }
   }
 }
-const chunk_reload_client_KPIgSuW8nlFz0ibHJZsfgHW2759AkJpafFG1yDUGspc = /* @__PURE__ */ defineNuxtPlugin({
+const chunk_reload_client_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:chunk-reload",
   setup(nuxtApp) {
     const router = useRouter();
@@ -13599,7 +13599,7 @@ const chunk_reload_client_KPIgSuW8nlFz0ibHJZsfgHW2759AkJpafFG1yDUGspc = /* @__PU
     });
   }
 });
-const components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8 = /* @__PURE__ */ defineNuxtPlugin({
+const components_plugin_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:global-components"
 });
 const layouts = {};
@@ -13633,7 +13633,7 @@ async function preloadRouteComponents(to, router = useRouter()) {
   }
   await Promise.all(promises);
 }
-const prefetch_client_eLReVWvo5VR6t_fEKzGr8sI0o_5tjnR8kcBKMS19kR8 = /* @__PURE__ */ defineNuxtPlugin({
+const prefetch_client_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:prefetch",
   setup(nuxtApp) {
     const router = useRouter();
@@ -13667,18 +13667,18 @@ const prefetch_client_eLReVWvo5VR6t_fEKzGr8sI0o_5tjnR8kcBKMS19kR8 = /* @__PURE__
     });
   }
 });
-const unocss_6Z4vW7S9aX_q2svWbGBc_X2b5QbQdkNmvzr_3kqqCd0 = /* @__PURE__ */ defineNuxtPlugin(() => {
+const unocss_knife4jStatic = /* @__PURE__ */ defineNuxtPlugin(() => {
 });
 const plugins = [
-  revive_payload_client_C65OzCNWnNx0WMS4opsUJLilFSaIDSgGsQ48mlVflRM,
-  unhead_RzBWsUc4kAbuTLtCDj0Smj_9nxZhsnGdjqkaUaaPJ_k,
+  revive_payload_client_knife4jStatic,
+  unhead_knife4jStatic,
   plugin,
-  navigation_repaint_client__dFBKtLwqa5hHnqNFKazhpcFc720TO73qAms8ECI5zY,
-  check_outdated_build_client_okGd8NVwkUZotl4hIb2dR0_eggksvPWLEouHNoqALt4,
-  chunk_reload_client_KPIgSuW8nlFz0ibHJZsfgHW2759AkJpafFG1yDUGspc,
-  components_plugin_4kY4pyzJIYX99vmMAAIorFf3CnAaptHitJgf7JxiED8,
-  prefetch_client_eLReVWvo5VR6t_fEKzGr8sI0o_5tjnR8kcBKMS19kR8,
-  unocss_6Z4vW7S9aX_q2svWbGBc_X2b5QbQdkNmvzr_3kqqCd0
+  navigation_repaint_client_knife4jStatic,
+  check_outdated_build_client_knife4jStatic,
+  chunk_reload_client_knife4jStatic,
+  components_plugin_knife4jStatic,
+  prefetch_client_knife4jStatic,
+  unocss_knife4jStatic
 ];
 const defineRouteProvider = (name = "RouteProvider") => /* @__PURE__ */ defineComponent({
   name,

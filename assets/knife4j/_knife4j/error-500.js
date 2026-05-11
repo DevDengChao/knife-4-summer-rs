@@ -64,7 +64,7 @@ const _sfc_main = {
     };
   }
 };
-const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-a266f282"]]);
+const error500 = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-knife4j500"]]);
 export {
   error500 as default
 };
