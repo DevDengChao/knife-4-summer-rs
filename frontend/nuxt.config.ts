@@ -23,6 +23,7 @@ export default defineNuxtConfig({
   },
   vite: {
     build: {
+      minify: false,
       rollupOptions: {
         output: {
           entryFileNames: '_knife4j/[name].js',

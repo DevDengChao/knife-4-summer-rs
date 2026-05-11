@@ -1,1 +1,13 @@
-import{K as e}from"./Knife4jConsole.js";import{d as o,K as t,z as n}from"./entry.js";const p=o({__name:"doc.html",setup(r){return(a,s)=>(n(),t(e))}});export{p as default};
+import { K as Knife4jConsole } from "./Knife4jConsole.js";
+import { d as defineComponent, K as createBlock, z as openBlock } from "./entry.js";
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "doc.html",
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createBlock(Knife4jConsole);
+    };
+  }
+});
+export {
+  _sfc_main as default
+};

@@ -1,1 +1,20 @@
-import{G as a,a as s,H as r,I as u,J as o}from"./entry.js";function d(t){const e=t||s();return e.ssrContext?.head||e.runWithContext(()=>{if(r()){const n=u(o);if(!n)throw new Error("[nuxt] [unhead] Missing Unhead instance.");return n}})}function i(t,e={}){const n=e.head||d(e.nuxt);return a(t,{head:n,...e})}export{i as u};
+import { G as useHead$1, a as useNuxtApp, H as hasInjectionContext, I as inject, J as headSymbol } from "./entry.js";
+function injectHead(nuxtApp) {
+  const nuxt = nuxtApp || useNuxtApp();
+  return nuxt.ssrContext?.head || nuxt.runWithContext(() => {
+    if (hasInjectionContext()) {
+      const head = inject(headSymbol);
+      if (!head) {
+        throw new Error("[nuxt] [unhead] Missing Unhead instance.");
+      }
+      return head;
+    }
+  });
+}
+function useHead(input, options = {}) {
+  const head = options.head || injectHead(options.nuxt);
+  return useHead$1(input, { head, ...options });
+}
+export {
+  useHead as u
+};

@@ -15,4 +15,10 @@ describe('Nuxt build config', () => {
       assetFileNames: '_knife4j/[name][extname]'
     })
   })
+
+  it('disables minification to keep embedded JavaScript reproducible across runners', async () => {
+    const { default: nuxtConfig } = await import('../nuxt.config')
+
+    expect(nuxtConfig.vite?.build?.minify).toBe(false)
+  })
 })
