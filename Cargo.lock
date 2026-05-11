@@ -1220,7 +1220,7 @@ dependencies = [
 
 [[package]]
 name = "knife-4-summer-rs"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "aide",
  "axum",
@@ -1238,7 +1238,7 @@ dependencies = [
 
 [[package]]
 name = "knife4j-aide-axum-example"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "aide",
  "axum",
@@ -1252,7 +1252,7 @@ dependencies = [
 
 [[package]]
 name = "knife4j-petstore-example"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "aide",
  "axum",
@@ -1262,7 +1262,7 @@ dependencies = [
 
 [[package]]
 name = "knife4j-summer-openapi-example"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "knife-4-summer-rs",
  "schemars",
