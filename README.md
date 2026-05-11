@@ -4,6 +4,8 @@
 
 Knife4j-style OpenAPI documentation plugin for `summer-rs` and direct `aide` / `axum` applications.
 
+![Knife4j Petstore preview](https://raw.githubusercontent.com/DevDengChao/knife-4-summer-rs/master/docs/marketing/petstore-docs.png)
+
 The crate serves a Nuxt-generated static UI at both `/doc.html` and `/doc`, and exposes Knife4j-compatible discovery endpoints:
 
 - `/v3/api-docs`
