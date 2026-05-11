@@ -1,5 +1,7 @@
 # knife-4-summer-rs
 
+[![Crates.io](https://img.shields.io/crates/v/knife-4-summer-rs.svg)](https://crates.io/crates/knife-4-summer-rs)
+
 Knife4j-style OpenAPI documentation plugin for `summer-rs` and direct `aide` / `axum` applications.
 
 The crate serves a Nuxt-generated static UI at both `/doc.html` and `/doc`, and exposes Knife4j-compatible discovery endpoints:
@@ -10,6 +12,30 @@ The crate serves a Nuxt-generated static UI at both `/doc.html` and `/doc`, and 
 - `/swagger-resources/configuration/ui`
 - `/swagger-resources/configuration/security`
 - `/services.json`
+
+## Installation
+
+Add the published crate from crates.io:
+
+```powershell
+cargo add knife-4-summer-rs
+```
+
+For `summer-rs` applications, also enable the OpenAPI-capable web stack used by your app:
+
+```powershell
+cargo add summer@0.5
+cargo add summer-web@0.5 --features openapi
+cargo add tokio --features full,tracing
+```
+
+For direct `aide` / `axum` applications, add the router dependencies alongside this crate:
+
+```powershell
+cargo add aide@0.16.0-alpha.2 --features axum,axum-json
+cargo add axum
+cargo add tokio --features full
+```
 
 ## summer-rs
 
